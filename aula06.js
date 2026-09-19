@@ -1,7 +1,7 @@
 'use strict';
 (() => {
  const $=id=>document.getElementById(id);
- const services={corte:{name:'Corte',price:'R$ 50',duration:'40 min'},barba:{name:'Barba',price:'R$ 35',duration:'30 min'},corte_barba:{name:'Corte + barba',price:'R$ 75',duration:'60 min'}};
+ const services={corte:{name:'Corte',price:'R$ 50',duration:'40 min',minutes:40},barba:{name:'Barba',price:'R$ 35',duration:'30 min',minutes:30},corte_barba:{name:'Corte + barba',price:'R$ 75',duration:'60 min',minutes:60}};
  const professionals={rafael:'Rafael',bruno:'Bruno'};
  const query=new URLSearchParams(location.search), debug=query.get('debug')==='1';
  const id=(window.LAB_CONFIG?.measurementId||'').trim();
@@ -42,7 +42,7 @@
   if(complete||!draft||draft.service!==active)return;
   // Confirma apenas a simulação em memória: não reserva uma agenda real.
   complete=true;$('confirm').disabled=true;$('summary').hidden=true;$('success').hidden=false;$('success-title').focus();
-  track('booking_complete',{service_id:draft.service,professional_id:draft.professional,booking_channel:'web'});
+  track('booking_complete',{service_id:draft.service,professional_id:draft.professional,booking_channel:'web',service_duration_minutes:services[draft.service].minutes});
  });
  $('edit').addEventListener('click',()=>{if(complete)return;draft=null;$('summary').hidden=true;$('booking-form').hidden=false;$('professional').focus();});
  function catalog(){const previous=active;$('booking').hidden=true;$('catalog').hidden=false;active=null;draft=null;complete=false;if(previous)document.querySelector(`[data-service="${previous}"]`).focus();}
