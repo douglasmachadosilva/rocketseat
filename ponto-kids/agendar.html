@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<!-- AULA 10: cole aqui a tag completa fornecida pelo GA4, logo após a abertura de head. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agende uma visita | Ponto Kids</title>
+<link rel="stylesheet" href="estilo.css">
+<script src="app.js" defer></script>
+</head>
+<body><header><a class="brand" href="index.html" aria-label="Ponto Kids, início">ponto<span>kids.</span></a><nav><a class="optional" href="index.html#servicos">Serviços</a><a href="agendar.html">Agendar horário</a></nav></header><main><section class="intro"><div class="steps">01 Escolhas &nbsp; / &nbsp; 02 Revisão &nbsp; / &nbsp; 03 Confirmação</div><h1>Um horário para vocês.</h1><p class="lead">Escolha a visita da criança. O responsável deve acompanhá-la no dia.</p></section><section class="booking"><form id="booking"><div class="fields"><label class="wide">Serviço<select id="service" required><option value="">Selecione um serviço</option><option value="corte_kids">Corte kids · R$ 45 · 30 min</option><option value="primeiro_corte">Primeiro corte · R$ 55 · 45 min</option><option value="corte_penteado">Corte + penteado · R$ 65 · 40 min</option></select></label><label>Profissional<select id="professional" required><option value="">Selecione</option><option value="lia">Lia</option><option value="caio">Caio</option></select></label><label>Dia<select id="day" required><option value="">Selecione</option></select></label><label>Horário<select id="time" required><option value="">Selecione</option><option>09:00</option><option>11:00</option><option>14:00</option><option>16:00</option></select></label><div><p class="small">Não precisa criar uma conta. Revise suas escolhas antes de confirmar.</p></div></div><button type="submit">Revisar agendamento</button></form><div id="review" hidden tabindex="-1"><h2>Está tudo certo?</h2><div class="summary" id="summary"></div><div class="actions"><button id="confirm" type="button">Confirmar agendamento</button><button id="edit" class="secondary" type="button">Alterar escolhas</button></div></div><p id="error" class="error" role="alert"></p></section></main><footer><span>Ponto Kids · Uma marca da Barbearia Ponto</span><span>Cuidado de gente grande. Jeito de criança.</span></footer></body></html>
