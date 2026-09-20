@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interesse na formação | Curso Ponto</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body><header><a href="index.html" class="brand">Curso Ponto<small>Uma empresa do Grupo Ponto</small></a><nav><a href="index.html#curso" class="optional">O curso</a><a href="interesse.html">Tenho interesse</a></nav></header><main><section class="intro"><span class="eyebrow">01 Interesse / 02 Seus dados</span><h1>O primeiro passo é seu.</h1><p>Preencha seus dados para registrar seu interesse na formação de barbeiros. Na próxima tela, você poderá baixar o material introdutório.</p></section><section class="split"><form id="lead-form"><label for="nome">Nome</label><input id="nome" name="nome" autocomplete="name" required maxlength="100"><label for="telefone">Telefone com DDD</label><input id="telefone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="22" placeholder="(11) 99999-9999"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="150"><button type="submit">Enviar meu interesse</button><p class="muted">Neste formulário de apresentação, os dados não são enviados nem armazenados.</p></form><aside><h2>Uma apresentação do que vem pela frente.</h2><p>Conheça os temas da formação e comece com um caderno sobre organização, atendimento e prática profissional.</p><p>O cadastro de interesse não representa matrícula ou pagamento.</p></aside></section></main><footer><span>Curso Ponto · Uma empresa do Grupo Ponto</span><span>Formação em barbearia. Técnica com propósito.</span></footer><script>
+const form=document.getElementById('lead-form'),phone=document.getElementById('telefone'),nameField=document.getElementById('nome');
+phone.addEventListener('input',()=>phone.setCustomValidity(''));nameField.addEventListener('input',()=>nameField.setCustomValidity(''));
+form.addEventListener('submit',event=>{event.preventDefault();const digits=phone.value.replace(/\D/g,'');phone.setCustomValidity(digits.length>=10&&digits.length<=13?'':'Informe um telefone com DDD.');nameField.setCustomValidity(nameField.value.trim().length>=2?'':'Informe seu nome.');if(!form.reportValidity())return;form.reset();window.location.href='sucesso.html';});
+</script></body></html>
